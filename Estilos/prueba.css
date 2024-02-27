@@ -1,0 +1,128 @@
+/*importacion de fuente*/
+@font-face {
+    font-family: 'FuenteStarWars';
+    src: url('./letra/STARWARS.ttf') format('truetype');
+  }
+*{
+    font-family: 'FuenteStarWars', sans-serif;
+}
+
+#bg {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../Imagenes/bg.png'); 
+    background-size: cover; 
+}
+
+.star {
+    position: absolute; 
+    background-color: white; 
+    border-radius: 50%;
+}
+
+.fondo {
+    background-image: url('fondo.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    position: relative; 
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 100px;
+    color: white;
+    text-align: center;
+}
+
+.carta {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    border-radius: 20px;
+    padding-top: 40px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 30px rgba(56, 250, 35, 0.5);
+   /* box-shadow: 0 0 30px rgba(252, 127, 18, 0.818); /* Brillo exterior */
+    background-image: url('./../Imagenes/card_bg.jpg');
+}
+
+
+.carta img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.carta .contenido {
+    position: absolute;
+    /*bottom: 10px;*/
+    left: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+.carta h3 {
+    margin: 0;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+.carta:hover {
+    transform: scale(1.2);
+    z-index: 1;
+    margin: 2%;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(252, 127, 18, 0.818);
+
+    cursor: pointer;
+}
+
+.carta:nth-child(1) {
+    transform: translateX(-200px) translateY(20px) rotateZ(-20deg);
+}
+
+.carta:nth-child(2) {
+    transform: translateX(-100px) rotateZ(-10deg);
+}
+
+.carta:nth-child(3) {
+    transform: translateX(0);
+}
+
+.carta:nth-child(4) {
+    transform: translateX(100px) rotateZ(10deg);
+}
+
+.carta:nth-child(5) {
+    transform: translateX(200px) translateY(20px) rotateZ(20deg);
+}
+
+p.info {
+    color: aliceblue;
+    position: absolute;
+    font-size: 25px;
+    text-align: center;
+    margin: 0; 
+    margin-left: 1%;
+  
+}
+
