@@ -41,33 +41,36 @@ $(document).ready(function () {
         let planeta;
 
 
-        var parrafo = $(".info");
+        // var parrafo = $(".info");
 
-           const apiUrl = `${jsonPersonaje.homeworld}`;
-            $.ajax({
-                url: apiUrl,
-                method: 'GET',
-                dataType: 'json',
-                success: function (response) {
+        const apiUrl = `${jsonPersonaje.homeworld}`;
+        $.ajax({
+            url: apiUrl,
+            method: 'GET',
+            dataType: 'json',
+            success: function (response) {
 
-                   /* console.log(response);
-                    console.log(response.name);*/
-                    planeta = response.name.toString();
 
-                    parrafo.html(`NOMBRE: ${jsonPersonaje.name}<br>PLANETA: ${planeta}<br>PESO: ${jsonPersonaje.height} KG<br>COLOR DE PELO: ${jsonPersonaje.hair_color}<br> 
+                /* console.log(response);
+                 console.log(response.name);*/
+                planeta = response.name.toString();
+
+                var c2 = $("<div></div>");
+                var parrafo = $('<p class="info"></p>');
+
+                $('.info').remove(); //al tratar de eliminar un elemento que aun no existe no salta excepcion
+                c2.append(parrafo); //hasta que no haga el append el elemento no existe por lo que borra el elemento anterior
+
+                parrafo.html(`NOMBRE: ${jsonPersonaje.name}<br>PLANETA: ${planeta}<br>PESO: ${jsonPersonaje.height} KG<br>COLOR DE PELO: ${jsonPersonaje.hair_color}<br> 
                     COLOR DE PIEL: ${jsonPersonaje.skin_color}<br>COLOR DE OJOS: ${jsonPersonaje.eye_color}<br>AÑO DE NACIMIENTO: ${jsonPersonaje.birth_year}<br>GENERO: ${jsonPersonaje.gender}<br>`);
-                    parrafo.css('font-family', 'FuenteStarWars');
+                $('.contenedor').append(c2);
 
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    // Manejar errores de la petición
-                    $('#response').text('Error: ' + textStatus + ', ' + errorThrown);
-                }
-            });
-
-    /*  console.log(planeta);
-      console.log(typeof planeta);*/
-      
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                // Manejar errores de la petición
+                $('#response').text('Error: ' + textStatus + ', ' + errorThrown);
+            }
+        });
 
     }
 

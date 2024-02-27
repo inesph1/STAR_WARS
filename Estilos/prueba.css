@@ -116,7 +116,7 @@ h1 {
     transform: translateX(200px) translateY(20px) rotateZ(20deg);
 }
 
-p.info {
+.info {
     color: aliceblue;
     position: absolute;
     font-size: 25px;
